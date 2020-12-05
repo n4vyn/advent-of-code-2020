@@ -7,4 +7,4 @@ if you want to run the solutions, you can use either
 
 **node adv *day* *task*** to run a task of day  
 or  
-**node cli** write command **h**, and you'll know what to do next
+**node cli** , then use command **h**, and you'll know what to do next
