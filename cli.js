@@ -12,13 +12,7 @@ const uncachedRequire = module => {
     return require(module);
 };
     
-let avaiableCommands = []
-let avaiableCommandss = [
-    'h, help',
-    'createday <day>',
-    'run <day> <task>',
-    'q, quit'
-]
+let availableCommands = []
 
 rl.setPrompt('cli> ')
 rl.prompt()
@@ -76,8 +70,8 @@ var commands = {
     help: {
         expectedArgs: '',
         handler: ()=>{
-            console.log('Avaiable commands: ');
-            for (const c of avaiableCommands) {
+            console.log('available commands: ');
+            for (const c of availableCommands) {
                 console.log('- '+chalk.hex('#00ffff')(c));
             }
         }
@@ -125,7 +119,7 @@ function createAliases(){
         if(commands[alias]){
             console.log(chalk.hex('#ff0000')(`Error creating alias ${alias}, key already exists.`))
         }else{
-            avaiableCommands.push(`${alias}, ${c} ${commands[c].expectedArgs}`);
+            availableCommands.push(`${alias}, ${c} ${commands[c].expectedArgs}`);
             commands[alias]=commands[c];
         }
     };
