@@ -1,6 +1,5 @@
 
 function task1(data){
-    return 'xs'
     return Math.max(...data)
 }
 
