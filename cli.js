@@ -1,5 +1,6 @@
 const chalk = require('chalk');
 const fs = require('fs')
+const open = require('open');
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -103,6 +104,13 @@ var commands = {
             }else{
                 console.log(chalk.hex('#ff0000')('Day already exists!'));
             }
+        }
+    },
+    showTask:{
+        expectedArgs: '<day>',
+        handler: (args)=>{
+            const [day] = [...args];
+            open('https://adventofcode.com/2020/day/'+day)
         }
     }
 }
