@@ -1,0 +1,14 @@
+{
+  "name": "aoc2020",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cli.js",
+  "scripts": {},
+  "author": "n4vyn",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "open": "^7.3.0"
+  }
+}
