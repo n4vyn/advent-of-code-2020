@@ -32,6 +32,7 @@ function runDayAndTask(day, task){
     const tasks = require('./day'+day+'/tasks');
     const data = tasks.prepareData(fs.readFileSync(__dirname+'/day'+day+'/data.txt', "utf-8"));
     console.log(chalk.hex('#0000ff')('Result -> ')+chalk.hex('#00ffff')(tasks['task'+task](data)))
+    console.log('')
 }
 
 /*
