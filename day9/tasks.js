@@ -14,8 +14,7 @@ function findContiguousNumber(data, preamble){
 function task2(data){
     const contiguousNumber = findContiguousNumber(data, 25)
     for (let i = 0; i < data.length; i++) {
-        let j = i;
-        let sum = 0;
+        let j = i, sum = 0;
         while(sum<contiguousNumber){
             sum+=data[j]
             if(sum===contiguousNumber){
