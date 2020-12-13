@@ -1,28 +1,13 @@
 function task1(data){
-    let i = 1
     let buses = data.buses.filter(x=>x!=='x').map(Number)
-    let closestOverEearliest = {}
-
-    for (const bus of buses) {
-        closestOverEearliest[bus] = bus*Math.floor((data.earliest/bus))
-    }
-
-    while(true){
-        for (let j = 0; j < buses.length; j++) {
-            closestOverEearliest[buses[j]] += buses[j]
-            if(closestOverEearliest[buses[j]] >= data.earliest){
-                buses.splice(j, 1)
-            }
-        }
-
-        if(buses.length === 0) break
-        i++
-    }
-    let result = Object.entries(closestOverEearliest).sort((a,b)=>a[1]-b[1])[0]
-    return (result[1]-data.earliest)*result[0]
+    let results = buses.map(bus=>bus*Math.ceil((data.earliest/bus)))
+    let min = Math.min(...results)
+    let busID = buses[results.findIndex(x=>x===min)];
+    return (min-data.earliest)*busID
 }
 
 function task2(data){
+    console.log(data);
     /**
      * First task I actually really hate,
      * because it seems I need to know some number theory shit
